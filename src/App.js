@@ -1,22 +1,31 @@
-import React, {Component} from 'react';
-import './App.css';
+import React, { Component,useState } from "react";
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import "./App.css";
+import Home from "./Pages/Home";
+import Users from "./Pages/Users";
 
 class App extends Component {
-  state = {users: []}
-
-  componentDidMount() {
-    fetch('/users')
-      .then(res => res.json())
-      .then(users => this.setState({ users }));
-  }
 
   render() {
     return (
       <div className="App">
-        <h1>Daftar User</h1>
-        {this.state.users.map(user =>
-          <div key={user.id}>{user.username}</div>
-        )}
+      <Router> 
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/users">Users</Link>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="*" element={<div>404</div>} />
+        </Routes>
+      </Router>
       </div>
     );
   }
