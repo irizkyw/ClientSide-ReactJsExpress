@@ -1,10 +1,12 @@
-import React, { Component,Form } from "react";
+import React, { Component } from 'react';
+import { Form } from "reactstrap";
 
 export default class AddUsers extends Component {
   render() {
     return (
       <div>
-        {/* <Form>
+        <h1>Tambah data brow</h1>
+        <Form>
           <label>Username</label>
           <input type="text" name="username"></input>
           <label>Email</label>
@@ -16,8 +18,7 @@ export default class AddUsers extends Component {
           <button type="submit" name="submit">
             Tambahkan
           </button>
-        </Form> */}
-        tambah
+        </Form>
       </div>
     );
   }
