@@ -1,25 +1,29 @@
-import React, { Component } from 'react';
-import { Form } from "reactstrap";
+import React from "react";
+import { Table, Button, Form, Modal, ButtonGroup } from "react-bootstrap";
 
-export default class AddUsers extends Component {
-  render() {
-    return (
-      <div>
-        <h1>Tambah data brow</h1>
-        <Form>
-          <label>Username</label>
-          <input type="text" name="username"></input>
-          <label>Email</label>
-          <input type="text" name="email"></input>
-          <label>Password</label>
-          <input type="text" name="password"></input>
-          <label>Roles_id</label>
-          <input type="text" name="roles_id"></input>
-          <button type="submit" name="submit">
-            Tambahkan
-          </button>
-        </Form>
-      </div>
-    );
-  }
+export default function AddUsers() {
+  return (
+    <div className="container text-start">
+      <h1 className="title my-5">Tambah data</h1>
+      <Form>
+        <Form.Group className="mb-3" controlId="formGroupUsername">
+          <Form.Label>Username</Form.Label>
+          <Form.Control type="text" placeholder="Enter username" />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formGroupEmail">
+          <Form.Label>Email</Form.Label>
+          <Form.Control type="email" placeholder="Email" />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formGroupPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="password" placeholder="Password" />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formGroupRoles">
+          <Form.Label>Roles_id</Form.Label>
+          <Form.Control type="text" placeholder="ID ROLES 1/0" />
+        </Form.Group>
+        <Button type="submit" name="submit" className="btn" variant="primary">Tambahkan</Button>
+      </Form>
+    </div>
+  );
 }
